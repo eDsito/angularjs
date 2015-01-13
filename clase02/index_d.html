@@ -5,10 +5,17 @@
 		<title>Directivas en AngularJS </title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
 	</head>
-	<body>
-		<div>
+	<!-- Agregando directivas-->
+	<body ng-controller="controlador">
+		<!-- Agregando directivas al div vive dentro de la otra y se relacionan-->
+		<div ng-show="true">
 			Las directivas de AngularJS son sencillas de usar
 		</div>
+		<!-- Podemos agregar otras directivas-->
+		<!-- Para validar en w3c podemos agregar data ejemplo: data-ng-show="true" y asi se validara-->
 		
+		<button ng-click="controladorBoton()" ng-show="false">
+			presiona aqui si te gustan las directivas
+		</button>
 	</body>
 </html>
