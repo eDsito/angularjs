@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="accion">
+	<head>
+		<meta  charset="utf-8">
+		<title>Colecciones de datos en AngularJS </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+	</head>
+	
+	<body>
+		<div ng-controller="controlador1">
+			<h1>Heroes</h1>
+			<ul>
+				<li ng-repeat="nombres in nombresSimples">
+					{{ nombres }}
+				</li>
+			</ul>
+			
+			<h1>Heroes de Accion</h1>
+			<ul>
+				<li ng-repeat="heroe in heroes">
+					{{ heroe.nombre }} {{ heroe.apellido }}
+				</li>
+			</ul>
+		</div>
+		
+		<script>
+			var miAplicacion = angular.module('accion',[])
+			//creando instancia del module
+			miAplicacion.controller('controlador1',['$scope', function($scope){
+				//declarando variable q existan dentro del objeto
+				$scope.nombresSimples = ["Alois","Gardenzio","Carlos"];
+				//creando objetos
+				$scope.heroes=[
+					//definiendo objetos
+					{nombre:"Arnold",apellido:"shushaxumare"},
+					{nombre:"Silvester",apellido:"Stallone"},
+					{nombre:"Chuck",apellido:"Norris"}
+				]
+
+			}])		
+		</script>
+		
+	</body>
+</html>
